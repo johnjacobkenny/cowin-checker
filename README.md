@@ -31,8 +31,8 @@ Run the script using `node index.js`. Note that the script does not auto refresh
 
 ## Improvements
 
-- [] Search for multiple days
-- [] Split code into smaller modules
+- [ ] Search for multiple days
+- [ ] Split code into smaller modules
 
 ## District ID Lookup
 
