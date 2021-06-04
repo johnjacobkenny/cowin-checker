@@ -4,7 +4,9 @@ This script automates the tedious process of looking for open slots in multiple 
 
 ## Initial setup
 
-First install dependencies using
+If you don't have Node.js installed already, please follow any article on google on how to do that.
+
+Then install dependencies using
 
 `npm install`
 
