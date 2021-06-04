@@ -29,30 +29,31 @@ async function findAppointmentsForDate(date) {
       const { error } = checkResponseForErrors(response);
       if (error) return { title: loc.title };
 
-      return { data: response, title: loc.title };
+      return { data: response, title: loc.title, filters: loc.filters };
     })
   );
 
-  responses.forEach(({ title, data }) => {
+  responses.forEach(({ data, filters, title }) => {
     console.log(prettyTitle(title, date));
-    if (data) listAvailableSlots(data.appointments);
+    if (data) listAvailableSlots(data.appointments, filters);
     console.log("\n");
   });
 }
 
-function listAvailableSlots(appointments) {
+function listAvailableSlots(appointments, filters) {
   appointments.forEach((center) => {
-    const { sessions } = center;
+    let sessions = [...center.sessions];
     if (!sessions || sessions.length === 0) {
       console.error(`No sessions available at ${center.name}`);
     } else {
+      filters.forEach(
+        (filterMethod) => (sessions = sessions.filter(filterMethod))
+      );
       sessions.forEach((session) => {
-        if (session.available_capacity > 0) {
-          const _center = prettyCenter(center);
-          const _session = prettySession(session);
+        const _center = prettyCenter(center);
+        const _session = prettySession(session);
 
-          console.log(`${_center} - ${_session}`);
-        }
+        console.log(`${_center} - ${_session}`);
       });
     }
   });

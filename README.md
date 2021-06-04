@@ -1,6 +1,6 @@
 # cowin-checker
 
-This script automates the tedious process of looking for open slots in multiple locations. It filters and shows only available slots for a given pincode or district.
+This script automates the tedious process of looking for open slots in multiple locations. It filters and shows available slots for a given pincode or district upto 3 days.
 
 ## Initial setup
 
@@ -8,7 +8,7 @@ First install dependencies using
 
 `npm install`
 
-Then open the `config.js` file and modify the locations array as per your requirements. For the `type` field, you can use "district" or "pincode" as shown below. Then correspondingly provide the `districtId` or `pincode`. Give a suitable title to identify each location in the output.
+Then open the `config.js` file and modify the locations array as per your requirements. For the `type` field, you can use "district" or "pincode" as shown below. Then correspondingly provide the `districtId` or `pincode`. Give a suitable title to identify each location in the output. Filters are explained in the next section below.
 
 ```
 locations: [
@@ -16,14 +16,28 @@ locations: [
       type: "district",
       districtId: 304,
       title: "Kottayam, Kerala",
+      filters: [available, covaxin, above18]
     },
     {
       type: "pincode",
       pincode: 382475,
       title: "Hansol (382475)",
+      filters: [available]
     },
   ]
 ```
+
+## Filters
+
+Filters can be used to setup rules to filter each location request. The items in the array are applied in an AND fashion. e.g. `[available, covaxin, above18]` means available and covaxin and above18. Code for filters is in `filters.js` and it is straightforward. Listing them here,
+
+- available
+- dose1
+- dose2
+- above18
+- above45
+- covishield
+- covaxin
 
 ## Running
 
@@ -31,7 +45,8 @@ Run the script using `node index.js`. Note that the script does not auto refresh
 
 ## Improvements
 
-- [ ] Search for multiple days
+- [x] Search for multiple days (for 3 days now)
+- [x] Modular and dynamic filters
 - [ ] Split code into smaller modules
 
 ## District ID Lookup
