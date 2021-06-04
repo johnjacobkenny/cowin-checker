@@ -1,5 +1,15 @@
-function prettyTitle(title) {
-  let result = `${title}\n`;
+function get3Dates() {
+  const dates = [];
+  for (let i = 1; i <= 3; i++) {
+    const date = new Date();
+    dates.push(date.setDate(date.getDate() + i));
+  }
+
+  return dates.map((date) => new Date(date));
+}
+
+function prettyTitle(title, date) {
+  let result = `${title} | ${new Date(date).toLocaleDateString()}\n`;
   const length = title.length;
   for (i = 0; i < length; i++) result += "=";
 
@@ -20,6 +30,7 @@ function prettySession({
 }
 
 module.exports = {
+  get3Dates,
   prettyCenter,
   prettySession,
   prettyTitle,

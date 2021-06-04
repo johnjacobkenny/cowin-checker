@@ -1,17 +1,29 @@
 const cowin = require("cowin-api-wrapper");
 const config = require("./config");
-const { prettyCenter, prettySession, prettyTitle } = require("./util");
+const {
+  prettyCenter,
+  prettySession,
+  prettyTitle,
+  get3Dates,
+} = require("./util");
 
 async function main() {
   console.log("");
+  const next3Dates = get3Dates();
+  await Promise.all(next3Dates.map(findAppointmentsForDate));
+}
+
+async function findAppointmentsForDate(date) {
   const responses = await Promise.all(
     config.locations.map(async (loc) => {
       let response;
 
       if (loc.type === "pincode") {
-        response = await cowin.findAppointmentsByPin(loc.pincode);
+        response = await cowin.findAppointmentsByPin(loc.pincode, { date });
       } else {
-        response = await cowin.findAppointmentsByDistrict(loc.districtId);
+        response = await cowin.findAppointmentsByDistrict(loc.districtId, {
+          date,
+        });
       }
 
       const { error } = checkResponseForErrors(response);
@@ -22,9 +34,9 @@ async function main() {
   );
 
   responses.forEach(({ title, data }) => {
-    console.log(prettyTitle(title));
+    console.log(prettyTitle(title, date));
     if (data) listAvailableSlots(data.appointments);
-    console.log("\n\n");
+    console.log("\n");
   });
 }
 
