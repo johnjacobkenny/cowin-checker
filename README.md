@@ -1,5 +1,7 @@
 # cowin-checker
 
+This script automates the tedious process of looking for open slots in multiple locations. It filters and shows only available slots for a given pincode or district.
+
 ## Initial setup
 
 First install dependencies using
@@ -25,7 +27,7 @@ locations: [
 
 ## Running
 
-Run the script using `node index.js`.
+Run the script using `node index.js`. Note that the script does not auto refresh, you will need to re-run to get latest data.
 
 ## Improvements
 
