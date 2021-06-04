@@ -27,6 +27,11 @@ locations: [
 
 Run the script using `node index.js`.
 
+## Improvements
+
+[] Search for multiple days
+[] Split code into smaller modules
+
 ## District ID Lookup
 
 <details>
