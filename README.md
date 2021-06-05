@@ -12,7 +12,7 @@ I had a few people from different parts of India who needed vaccines, and if I w
 
 That's why I came up with this, spent an evening and this is the result so far. My vision for this is for it to be a useful tool for any developer to support their loved ones who are looking for vaccine slots, while not being a big time sink. UX is a priority and we might see a better cli for adding and managing requirements.
 
-Sooo that's it. If you think anything needs improvement, feel free to create an issue and we can discuss on it. If anyone wants to contribute to the code, they are most welcome to, after discussing on the issues list.
+Sooo that's it. If you like it hit the star so you can find it again easily. If you used this and it helped you find a slot for your loved ones, please some and write a testimonial in the issues section!! ❤️ If you think anything needs improvement, feel free to create an issue and we can discuss on it. If anyone wants to contribute to the code, they are most welcome to, after discussing on the issues list.❤️
 
 ## Initial setup
 
