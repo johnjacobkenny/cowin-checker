@@ -1,6 +1,20 @@
 # cowin-checker
 
-This script automates the tedious process of looking for open slots in multiple locations. It filters and shows available slots for a given pincode or district upto 3 days.
+```
+TL;DR This script automates the tedious process of looking for open slots in multiple locations. It filters and shows available slots for a given pincode or district upto 3 days. It is targeted at technical folks who want to monitor Cowin for their non-technical loved ones.
+```
+
+### Story
+
+By sheer luck I was able to book an appointment for my first dose. Many of my friends and relatives have been trying for days but couldn't book their slots before it got over in minutes. I had nothing to tell them than that I will keep looking and let them know if I find anything.
+
+So I started checking once in a while, but the Cowin website does not have a great UX. It does most things decently, but doesn't do some basic things such as filtering out or sorting so that available centers would be shown first. This means that for every lookup we have to spend time scrolling through the list to find open slots.
+
+I had a few people from different parts of India who needed vaccines, and if I wanted to look for all of them, it would take a considerable amount of time, not to mention I have to keep in mind the exact requirements for each person and do the filtering in my head.
+
+That's why I came up with this, spent an evening and this is the result so far. My vision for this is for it to be a useful tool for any developer to support their loved ones who are looking for vaccine slots, while not being a big time sink. UX is a priority and we might see a better cli for adding and managing requirements.
+
+Sooo that's it. If you think anything needs improvement, feel free to create an issue and we can discuss on it. If anyone wants to contribute to the code, they are most welcome to, after discussing on the issues list.
 
 ## Initial setup
 
