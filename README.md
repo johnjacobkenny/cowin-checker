@@ -1,8 +1,6 @@
 # cowin-checker
 
-```
 TL;DR This script automates the tedious process of looking for open slots in multiple locations. It filters and shows available slots for a given pincode or district upto 3 days. It is targeted at technical folks who want to monitor Cowin for their non-technical loved ones.
-```
 
 ### Story
 
