@@ -1019,3 +1019,37 @@ Run the script using `node index.js`. Note that the script does not auto refresh
 - 794: Shimla
 
 </details>
+
+## Steps To Run the project from your mobile phone 
+
+You can run the project in your mobile phone as well. You do this by basically first installing a terminal emulator and then then executing the project from the terminal. the steps are:
+
+#### Steps
+
+1. Install f-Droid app from [f-Droid](https://f-droid.org/en/packages/org.fdroid.fdroid/).
+ In the world of opensource apps, this one acts as the manager.
+ Meaning that it'll help you to install the correct version of an opensource app that's compatible with your phone. It's kinda like the playstore for opensource apps.
+ 
+2. Install Termux app from f-Droid
+ Easy enough step. Do take care that u don't download or update this app from  playstore.
+ 
+3. Open the Termux app and type in "pkg update && pkg upgrade"
+ This ensures that the packages are uptodate.execute this as often as you like and esp. after installing a new package.
+ 
+4. Now terminal is ready. To install cowin-checker, execute "pkg install node","pkg install git" 
+
+5. Execute "git clone https://github.com/johnjacobkenny/cowin-checker.git"
+
+6. Execute "cd cowin-checker"
+
+7. Execute "npm install" 
+
+8. Execute "node index.js". the results will show up on the screen.
+
+9. If you want to see the files in Termux, you need a special file explorer app (If phone is not rooted). For more on that https://wiki.termux.com/wiki/Sharing_Data
+ Google "Termux sharing","File Explorer",etc
+
+
+#### Notes:
+1. If there is any package that I forgot to mention, or is needed for you , Termux will ask you to install it and give you the commands to do just that. Its very friendly like that.
+2. There are a lot of tutorials available in youtube for Termux. You can use that if you run into issues. But don't blindly run any code that they say as there a lot of malicious "tutorials" targeting Termux noobies.
